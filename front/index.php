@@ -12,10 +12,9 @@
 </head>
 
 <body>
-    <form action="buscador.php">
-
-        <input type="submit" name="boton" value="buscador">
-    </form>
+<form action="buscador.php" method="POST">
+<input type="submit" name="search" id="search" value="Buscar">
+</form>
 </body>
 
 </html>
