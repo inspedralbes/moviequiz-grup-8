@@ -13,7 +13,6 @@
 
 <body>
 <form action="buscador.php" method="POST">
-<input type="text" id="keywords" name="keywords" size="30" maxlength="30" >
 <input type="submit" name="search" id="search" value="Buscar">
 </form>
 </body>
