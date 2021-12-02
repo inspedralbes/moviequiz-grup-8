@@ -39,6 +39,39 @@
         </nav>
 
     </div>
+
+    <script>
+        let u = document.getElementById("username").value;
+
+let p = document.getElementById("pwd").value;
+
+
+
+            const datosEnvio = new FormData();
+
+            datosEnvio.append('username', u);
+
+            datosEnvio.append('pwd', p);
+
+
+
+fetch(`login.php`, {
+
+                    method: 'POST',
+
+                    body: datosEnvio
+
+                })
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    console.log(data);
+
+
+
+    </script>
 </body>
 
 </html>
