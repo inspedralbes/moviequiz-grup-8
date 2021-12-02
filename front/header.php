@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
+<div class="navbar-fixed">
 
-        <nav>
+<nav>
             <div class="nav-wrapper">
                 <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
                 <div class="right hide-on-med-and-down">
@@ -26,7 +26,7 @@
                             </div>
                             <div class="input-field col s3">
                                 <i class="material-icons prefix">vpn_key</i>
-                                <input id="icon_telephone" type="tel" class="validate">
+                                <input id="icon_telephone" type="password" class="validate">
                                 <label for="icon_telephone">Password</label>
                             </div>
                             <div class="input-field col s3">
@@ -38,40 +38,39 @@
             </div>
         </nav>
 
-    </div>
 
-    <script>
-        let u = document.getElementById("username").value;
+<script>
+    let u = document.getElementById("username").value;
 
-let p = document.getElementById("pwd").value;
-
-
-
-            const datosEnvio = new FormData();
-
-            datosEnvio.append('username', u);
-
-            datosEnvio.append('pwd', p);
+    let p = document.getElementById("pwd").value;
 
 
 
-fetch(`login.php`, {
+    const datosEnvio = new FormData();
 
-                    method: 'POST',
+    datosEnvio.append('username', u);
 
-                    body: datosEnvio
-
-                })
-
-                .then(response => response.json())
-
-                .then(data => {
-
-                    console.log(data);
+    datosEnvio.append('pwd', p);
 
 
 
-    </script>
+    fetch(`login.php`, {
+
+        method: 'POST',
+
+        body: datosEnvio
+
+    })
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            console.log(data);
+
+        });
+
+</script>
 </body>
 
 </html>

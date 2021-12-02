@@ -8,7 +8,7 @@ $timer=rand(1,7);
 
 sleep($timer);
 
-if (($user == "Pedralbes")  && ($pwd == "1234")) {
+if (($user == "user")  && ($pwd == "1234")) {
 
         session_start();
 
