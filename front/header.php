@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
@@ -15,7 +16,25 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
-                <a class="waves-effect waves-light btn right hide-on-med-and-down">Login</a>
+                <div class="right hide-on-med-and-down">
+                    <form class="col s9">
+                        <div class="row">
+                            <div class="input-field col s3">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Username</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Password</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <a class="waves-effect waves-light btn-small">Login</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </nav>
 
