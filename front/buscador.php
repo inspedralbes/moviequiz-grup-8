@@ -23,7 +23,7 @@
         <div class="input-field">
           <input id="search" type="search" required>
           <label class="label-icon"  for="search"><i size="30" maxlength="30" class="material-icons"></i></label>
-          <i class="material-icons">close</i>
+          <i class="material-icons">Cerrar</i>
         </div>
       </form>
     </div>
