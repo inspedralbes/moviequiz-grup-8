@@ -14,7 +14,7 @@
 
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo"><img src="img/logo.png" width="200px"></a>
+                <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
                 <a class="waves-effect waves-light btn right hide-on-med-and-down">Login</a>
             </div>
         </nav>
