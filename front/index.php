@@ -12,8 +12,15 @@
 </head>
 
 <body>
+    <br>
+    <br>
+    <br>
+
+    
 <form action="buscador.php" method="POST">
 <input type="submit" name="search" id="search" value="Buscar">
+
+</form>
 </form>
 </body>
 
