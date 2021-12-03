@@ -17,7 +17,7 @@
             <div class="nav-wrapper">
                 <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
                 <div class="right hide-on-med-and-down">
-                    <form class="col s9">
+                    <form class="col s12">
                         <div class="row">
                             <div class="input-field col s3">
                                 <i class="material-icons prefix">account_circle</i>
@@ -33,7 +33,7 @@
                                 <a class="waves-effect waves-light btn-small">Login</a>
                             </div>
                             <div class="input-field col s3">
-                                <a class="waves-effect waves-light btn-small">Registre</a>
+                                <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
                             </div>
                         </div>
                     </form>
