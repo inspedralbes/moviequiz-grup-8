@@ -17,18 +17,21 @@
 </head>
 <body>
     
-<nav>
+<!-- <nav>
         <div class="nav-wrapper">
             <form>
                 <div class="input-field">
-                    <input id="nombrepeli" type="buscar" required>
-                    <label class="label-icon" for="nombrepeli" id="buscar"><i class="material-icons">search</i></label>
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
         </div>
-    </nav>
-
+    </nav> -->
+   <br><br><br>
+<input type="text" name="search" id="nombrePeli">
+<button id="buscar">BuscarPeli</button>
+<div id="resultado"></div>
     <script>
 
     document.getElementById("buscar").addEventListener("click",function(){
