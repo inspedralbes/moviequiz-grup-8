@@ -15,6 +15,7 @@
     <br>
     <br>
     <br>
+    <hr>
 
     
 <form action="buscador.php" method="POST">
