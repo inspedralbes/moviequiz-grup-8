@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +10,16 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+
     <title>Document</title>
     <?php
         require_once('header.php');
     ?>
 </head>
+
 <body>
-    
-<!-- <nav>
+
+    <!-- <nav>
         <div class="nav-wrapper">
             <form>
                 <div class="input-field">
@@ -28,38 +30,58 @@
             </form>
         </div>
     </nav> -->
-   <br><br><br>
-<input type="text" name="search" id="nombrePeli">
-<button id="buscar">BuscarPeli</button>
-<div id="resultado"></div>
+    <br><br><br>
+    <input type="text" name="search" id="nombrePeli">
+    <button id="buscar">BuscarPeli</button>
+    <div id="resultado">
+        
+
+       
+        
+
+    </div>
     <script>
+    document.getElementById("buscar").addEventListener("click", function() {
+        let busqueda = document.getElementById("nombrePeli").value;
+        document.getElementById("nombrePeli").value = "";
+        var url = `http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
 
-    document.getElementById("buscar").addEventListener("click",function(){
-        let busqueda=document.getElementById("nombrePeli").value;
-        document.getElementById("nombrePeli").value="";
-        var url=`http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
-
-            fetch(url).then(res => res.json())
+        fetch(url).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(function(response){
-                             console.log('Success:', response.Search);
-                            let d=response.Search;
-                            let htmlStr="";
+            .then(function(response) {
+                console.log('Success:', response.Search);
+                let d = response.Search;
+                let htmlStr = "";
 
-                            for (let index = 0; index < d.length; index++) {
-                                console.log(d[index].Title)
-                                htmlStr +=  `<div>
-                                                <h3>${d[index].Title}</h3>
-                                                <img src="${d[index].Poster}"
-                                                </div>`    
-                            }
+                for (let index = 0; index < d.length; index++) {
+                    console.log(d[index].Title)
+                    htmlStr += `
+<div class="row">
+    <div class="col s3 m3">
+        <div class="card">
+            <div class="card-image">
+                <img src="${d[index].Poster}">
+                <span class="card-title">${d[index].Title}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                    require little markup to use effectively.</p>
+            </div>
+        
+        </div>
+    </div>
+</div>
+`
+                }
 
-                            document.getElementById("resultado").innerHTML=htmlStr;
+                document.getElementById("resultado").innerHTML = htmlStr;
 
-                            });
-            
-            
-        })
-</script>
+            });
+
+
+    })
+    </script>
 </body>
+
 </html>
