@@ -11,27 +11,17 @@
 </head>
 
 <body>
-<div class="navbar-fixed">
+    <div class="navbar-fixed">
 
-<nav>
+        <nav>
             <div class="nav-wrapper">
                 <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
                 <div class="right hide-on-med-and-down">
-                    <form class="col s12">
+                    <form class="col s3">
                         <div class="row">
-                            <div class="input-field col s3">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Username</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <i class="material-icons prefix">vpn_key</i>
-                                <input id="icon_telephone" type="password" class="validate">
-                                <label for="icon_telephone">Password</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <a class="waves-effect waves-light btn-small">Login</a>
-                            </div>
+                            <?php
+        require_once('login.php');
+    ?>
                             <div class="input-field col s3">
                                 <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
                             </div>
@@ -42,38 +32,37 @@
         </nav>
 
 
-<script>
-    let u = document.getElementById("username").value;
+        <script>
+        let u = document.getElementById("username").value;
 
-    let p = document.getElementById("pwd").value;
-
-
-
-    const datosEnvio = new FormData();
-
-    datosEnvio.append('username', u);
-
-    datosEnvio.append('pwd', p);
+        let p = document.getElementById("pwd").value;
 
 
 
-    fetch(`login.php`, {
+        const datosEnvio = new FormData();
 
-        method: 'POST',
+        datosEnvio.append('username', u);
 
-        body: datosEnvio
+        datosEnvio.append('pwd', p);
 
-    })
 
-        .then(response => response.json())
 
-        .then(data => {
+        fetch(`login.php`, {
 
-            console.log(data);
+                method: 'POST',
 
-        });
+                body: datosEnvio
 
-</script>
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                console.log(data);
+
+            });
+        </script>
 </body>
 
 </html>

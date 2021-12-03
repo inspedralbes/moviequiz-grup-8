@@ -41,7 +41,7 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
  
         if ($result) {
-            echo '<p class="success">Your registration was successful!</p>';
+            echo '<p class="flow-text">Te has registrado correctamente!!</p>';
         } else {
             echo '<p class="error">Something went wrong!</p>';
         }
@@ -73,6 +73,9 @@ if (isset($_POST['register'])) {
                 <i class="material-icons right">send</i>
             </button>
         </form>
+    </div>
+    <div class="input-field col s3">
+        <a class="waves-effect waves-light btn-small" href="index.php">Volver</a>
     </div>
 </body>
 
