@@ -20,7 +20,6 @@
     
 <form action="buscador.php" method="POST">
 <input type="submit" name="search" id="search" value="Buscar">
-<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
 </form>
 </form>
 </body>

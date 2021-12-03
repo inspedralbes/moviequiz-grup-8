@@ -21,13 +21,42 @@
         <div class="nav-wrapper">
             <form>
                 <div class="input-field">
-                    <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <input id="nombrepeli" type="search" required>
+                    <label class="label-icon" for="search" id="buscar"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
         </div>
     </nav>
 
+    <script>
+
+    document.getElementById("buscar").addEventListener("click",function(){
+        let busqueda=document.getElementById("nombrePeli").value;
+        document.getElementById("nombrePeli").value="";
+        var url=`http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
+
+            fetch(url).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(function(response){
+                             console.log('Success:', response.Search);
+                            let d=response.Search;
+                            let htmlStr="";
+
+                            for (let index = 0; index < d.length; index++) {
+                                console.log(d[index].Title)
+                                htmlStr +=  `<div>
+                                                <h3>${d[index].Title}</h3>
+                                                <img src="${d[index].Poster}"
+                                                </div>`    
+                            }
+
+                            document.getElementById("resultado").innerHTML=htmlStr;
+
+                            });
+            
+            
+        })
+</script>
 </body>
 </html>
