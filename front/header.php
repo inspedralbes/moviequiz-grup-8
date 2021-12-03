@@ -32,6 +32,9 @@
                             <div class="input-field col s3">
                                 <a class="waves-effect waves-light btn-small">Login</a>
                             </div>
+                            <div class="input-field col s3">
+                                <a class="waves-effect waves-light btn-small">Registre</a>
+                            </div>
                         </div>
                     </form>
                 </div>
