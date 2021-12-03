@@ -15,6 +15,7 @@
     <?php
         require_once('header.php');
     ?>
+
 </head>
 
 <body>
@@ -33,12 +34,14 @@
     <br><br><br>
     <input type="text" name="search" id="nombrePeli">
     <button id="buscar">BuscarPeli</button>
-    <div id="resultado">
-        
+    <div class="row">
+        <div id="resultado">
 
-       
-        
 
+
+
+
+        </div>
     </div>
     <script>
     document.getElementById("buscar").addEventListener("click", function() {
@@ -56,14 +59,14 @@
                 for (let index = 0; index < d.length; index++) {
                     console.log(d[index].Title)
                     htmlStr += `
-<div class="row">
-    <div class="col s3 m3">
-        <div class="card">
+    <div class="col s2">
+        <div class="card large">
             <div class="card-image">
                 <img src="${d[index].Poster}">
                 <span class="card-title">${d[index].Title}</span>
                 <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
             </div>
+        
             <div class="card-content">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
                     require little markup to use effectively.</p>
@@ -71,7 +74,6 @@
         
         </div>
     </div>
-</div>
 `
                 }
 
