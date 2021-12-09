@@ -30,7 +30,7 @@ if (isset($_POST['register'])) {
     $query->execute();
  
     if ($query->rowCount() > 0) {
-        echo '<p class="error">The email address is already registered!</p>';
+        echo '<p class="error" style="color:red" >Este email ya esta registrado!</p>';
     }
  
     if ($query->rowCount() == 0) {
@@ -41,9 +41,9 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
  
         if ($result) {
-            echo '<p class="flow-text">Te has registrado correctamente!!</p>';
+            echo '<p class="flow-text" style="color:green" >Te has registrado correctamente!!</p>';
         } else {
-            echo '<p class="error">Something went wrong!</p>';
+            echo '<p class="error" style="color:red" >Algo esta Mal!</p>';
         }
     }
 }
@@ -55,7 +55,7 @@ if (isset($_POST['register'])) {
         <form class="col s12" method="post" action="" name="signup-form">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Placeholder" name="username" id="first_name" type="text" class="validate">
+                    <input placeholder="Usuario" name="username" id="first_name" type="text" class="validate">
                     <label for="first_name">Usuario</label>
                 </div>
                 <div class="input-field col s6">

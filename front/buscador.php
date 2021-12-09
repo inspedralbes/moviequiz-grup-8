@@ -11,6 +11,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    
+
+
     <title>Document</title>
     <?php
         require_once('header.php');
@@ -64,7 +67,7 @@
             <div class="card-image">
                 <img src="${d[index].Poster}">
                 <span class="card-title">${d[index].Title}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a href="#modalpelis" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
             </div>
         
             <div class="card-content">
