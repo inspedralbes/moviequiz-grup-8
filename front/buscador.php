@@ -36,7 +36,9 @@
     </nav> -->
     <br><br><br>
     <input type="text" name="search" id="nombrePeli">
-    <button id="buscar">BuscarPeli</button>
+    <button id="buscar" class="btn waves-effect waves-light" name="action">Buscar
+    <i class="material-icons right">search</i>
+  </button>
     <div class="row">
         <div id="resultado">
 
