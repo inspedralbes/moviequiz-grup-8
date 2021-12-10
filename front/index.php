@@ -31,9 +31,13 @@
 </button>
     <div class="container">
   <div class="masvistas">
-<h1>1</h1>
+<h4>Peliculas Mas Vistas</h4>
 
+<div id="vistas">
+    <h5>1 2 3 4 5 6 7 8 </h5>
+</div>
   </div>
+
   <div class="fav">
   <h1>1</h1>
 

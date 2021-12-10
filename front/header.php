@@ -10,10 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-<body>
+<body class="#b39ddb deep-purple lighten-3">
     <div class="navbar-fixed">
 
-        <nav>
+        <nav class="#9575cd deep-purple lighten-2">
             <div class="nav-wrapper">
                 <a href="index.php" class="brand-logo"><img src="img/logo.png" width="200px"></a>
                 <div class="right hide-on-med-and-down">

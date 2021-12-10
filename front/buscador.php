@@ -43,7 +43,6 @@
 
 
 
-
         </div>
     </div>
     <script>
@@ -64,19 +63,36 @@
                     htmlStr += `
     <div class="col s2">
         <div class="card large">
+         <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1">+ info</a>
             <div class="card-image">
+           
                 <img src="${d[index].Poster}">
+                
                 <span class="card-title">${d[index].Title}</span>
-                <a href="#modalpelis" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                
             </div>
         
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                    require little markup to use effectively.</p>
+                <p>${d[index].Title}</p>
+                <p>${d[index].Year}</p>
             </div>
         
         </div>
+ 
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
     </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+    </div>
+
+   
 `
                 }
 
@@ -86,6 +102,14 @@
 
 
     })
+    </script>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });
+         
     </script>
 </body>
 
