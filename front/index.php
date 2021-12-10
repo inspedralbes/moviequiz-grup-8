@@ -23,7 +23,7 @@
     <br>
     <br>
     <br>
-    <hr>
+    
 
 <form action="buscador.php" method="POST">
 <button class="btn waves-effect waves-light" type="submit" name="search" value="Buscar">Buscar pelis
