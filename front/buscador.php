@@ -10,19 +10,20 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Iconos fuentes -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    
 
 
     <title>Document</title>
-    <?php
-        require_once('header.php');
-    ?>
+
 
 </head>
 
-<body>
-
+<body class="#b39ddb deep-purple lighten-3">
+    <?php
+        require_once('header.php');
+    ?>
     <!-- <nav>
         <div class="nav-wrapper">
             <form>
@@ -63,9 +64,9 @@
                     htmlStr += `
     <div class="col s2">
         <div class="card large">
-         <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1">+ info</a>
+        
             <div class="card-image">
-           
+            <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1">+ info</a>
                 <img src="${d[index].Poster}">
                 
                 <span class="card-title">${d[index].Title}</span>
@@ -80,15 +81,15 @@
         </div>
  
     <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+            <div id="modal1" class="modal">
+                     <div class="modal-content">
+                            <h4>Modal Header</h4>
+                             <p>A bunch of text</p>
+                     </div>
+                    <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+            </div>
 
     </div>
 
@@ -104,12 +105,11 @@
     })
     </script>
     <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-  });
-         
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Modal afegit');
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {});
+    });
     </script>
 </body>
 

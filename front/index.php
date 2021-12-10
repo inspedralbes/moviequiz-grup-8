@@ -19,7 +19,7 @@
     ?>
 </head>
 
-<body>
+<body class="#b39ddb deep-purple lighten-3">
     <br>
     <br>
     <br>
