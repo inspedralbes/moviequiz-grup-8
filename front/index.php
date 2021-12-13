@@ -31,16 +31,30 @@
 </button>
     <div class="container">
   <div class="masvistas">
-<h4>Peliculas Mas Vistas</h4>
+<h4>Peliculas Recomendadas</h4>
 
 <div id="vistas">
-    <h5>1 2 3 4 5 6 7 8 </h5>
+<div class="col s2">
+       
+        
+            <div class="card-image">
+            
+                <img src="https://api.lorem.space/image/movie?w=159&h=220" width="250px" height="350px">
+                <img src="https://api.lorem.space/image/movie?w=158&h=220" width="250px" height="350px">
+                <img src="https://api.lorem.space/image/movie?w=157&h=220" width="250px" height="350px">
+                <img src="https://api.lorem.space/image/movie?w=156&h=220" width="250px" height="350px">
+                <img src="https://api.lorem.space/image/movie?w=155&h=220" width="250px" height="350px">
+                <img src="https://api.lorem.space/image/movie?w=154&h=220" width="250px" height="350px">
+            </div>
+            </div>
+
 </div>
   </div>
 
   <div class="fav">
-  <h1>1</h1>
-
+  <h1>Carrito de peliculas</h1>
+  <img src="img/cars.jpg"  width="100px" height="150px"><br>
+  <i style="text-align:center">Cars</i>
   </div>
 </div>
     
@@ -50,5 +64,4 @@
 </form>
 </form>
 </body>
-
 </html>

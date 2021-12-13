@@ -50,13 +50,13 @@ if (isset($_POST['register'])) {
  
 ?>
 
-<body>
+<body class="#d1c4e9 deep-purple lighten-4">
     <div class="row">
         <form class="col s12" method="post" action="" name="signup-form">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Usuario" name="username" id="first_name" type="text" class="validate">
-                    <label for="first_name">Usuario</label>
+                    <input style="color:black" placeholder="Usuario" name="username" id="first_name" type="text" class="validate">
+                    <label  for="first_name">Usuario</label>
                 </div>
                 <div class="input-field col s6">
                     <input id="last_name" name="password" type="password" class="validate">
