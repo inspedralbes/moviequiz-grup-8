@@ -55,13 +55,68 @@
   <h1>Carrito de peliculas</h1>
   <img src="img/cars.jpg"  width="100px" height="150px"><br>
   <i style="text-align:center">Cars</i>
+  <a class="btn waves-effect waves-light modal-trigger" id="jugar" href="#jugar">JUGAR</a>
   </div>
 </div>
+<div id="jugar" class="modal">
+        <div class="modal-content">
+        <div id="juego"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
+        </div>
+    </div>
+
+
+
+</form>
+<script>
+    document.getElementById("jugar").addEventListener("click", function() {
+    let busqueda = document.getElementById("nombrePeli").value;
+    document.getElementById("nombrePeli").value = "";
+    var url = `http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
+
+    fetch(url).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(function(response) {
+            console.log('Success:', response.Search);
+            let d = response.Search;
+        let htmlStr="";
+
+        for (let index = 0; index < pelis.length; index++) {
+          const element = pelis[index];        
+
+          htmlStr += `<div class='card'>
+                    <h2>${element.Nombre}</h2>
+                    <img src='${element.Poster}'>
+                    <div>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <label for="opcion1_1">${element.choice1}</label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <label for="opcion1_1">${element.choice2}</label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <label for="opcion1_1">${element.choice3}</label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <label for="opcion1_1">${element.choice4}</label>
+                    </div>
+                    </div>`;
+                  
+          
+        
+        }
+        htmlStr += `<button id='enviar'>JUGAR</button>`;
+        document.getElementById("juego").innerHTML=htmlStr;
+
+        });
     
+</script>
+<script>
 
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+});
 
-
-</form>
-</form>
+</script>
 </body>
 </html>
