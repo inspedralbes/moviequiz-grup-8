@@ -13,34 +13,32 @@ document.getElementById("buscar").addEventListener("click", function() {
             for (let index = 0; index < d.length; index++) {
                 console.log(d[index].Title)
                 htmlStr += `
-<div class="col s2">
-    <div class="card large">
-           
-    <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal1">+info</a>
-
-            <img src="${d[index].Poster}" width="295px" height="450px">
-            
-            <span class="card-action">${d[index].Title}</span>
-                 
-    </div>
+                    <div class="col s2">
+                        <div class="card large">
+                        <a class="btn-floating halfway-fab waves-effect waves-light modal-trigger red" href="#modal${index}">+info</a>
+                                <img src="${d[index].Poster}" width="295px" height="450px">
+                                <span class="card-action">${d[index].Title}</span>   
+                        </div>
 
 
-    <div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4>Lorem, ipsum dolor.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione?</p>
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
-    </div>
-</div>
+                        <div id="modal${index}" class="modal">
+                        <div class="modal-content">
+                            <h4>Lorem, ipsum dolor.</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
+                        </div>
+                    </div>
 
-</div>
+                    </div>
 
 
-`
-            }
+                    `;
+                                }
 
             document.getElementById("resultado").innerHTML = htmlStr;
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems,{});
         });
 })
