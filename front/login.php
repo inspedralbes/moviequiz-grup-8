@@ -12,7 +12,7 @@
                                 <label for="icon_telephone">Password</label>
                             </div>
                             <div class="input-field col s3">
-                                <a class="waves-effect waves-light btn-small">Login</a>
+                                <a class="waves-effect waves-light btn-small" id="login">Login</a>
                             </div>
                         </div>
                     </form>
