@@ -24,50 +24,54 @@ document.getElementById("buscar").addEventListener("click", function() {
                         <div id="modal${index}" class="modal">
                         <div class="modal-content">
                         <center>
-                        <h3>${d[index].Title}</h3>
-                        <h5>Valoracion</h5>
-                        <div>
-                            <label>
-                                <input name"Favorito" type="checkbox"/>
-                                <span>Marcar como favorito</span>
-                            </label>
-                        </div>
-                        <div>
-                            <br>
-                            <label>
-                                <input name"valoracion" type="radio" value="1"/>
-                                <span>1</span>
-                            </label>
-                            <label>
-                                <input name"valoracion" type="radio" value="2"/>
-                                <span>2</span>
-                            </label>
-                            <label>
-                                <input name"valoracion" type="radio" value="3"/>
-                                <span>3</span>
-                            </label>
-                            <label>
-                                <input name"valoracion" type="radio" value="4"/>
-                                <span>4</span>
-                            </label>
-                            <label>
-                                <input name"valoracion" type="radio" value="5"/>
-                                <span>5</span>
-                            </label>
-                        </div>
-                        <div class"input-field">
-                            <label for="comentario">Comentario<label>
-                            <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea> 
-                        </div>
-                        <div>
-                            <a id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
-                        </div>
-                        </center>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
-                        </div>
-                    </div>
+                        <form method="post">
+                            <h3>${d[index].Title}</h3>
+                            <h5>Valoracion</h5>
+                                <div>
+                                    <label>
+                                        <input name"Favorito" type="checkbox"/>
+                                        <span>Marcar como favorito</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <br>
+                                    <label>
+                                        <input name="group1" type="radio" value="1"/>
+                                        <span>1</span>
+                                    </label>
+                                    <label>
+                                        <input name="group1" type="radio" value="3"/>
+                                        <span>2</span>
+                                    </label>
+                                    <label>
+                                        <input name="group1" type="radio" value="4"/>
+                                        <span>3</span>
+                                    </label>
+                                    <label>
+                                        <input name="group1" type="radio" value="5"/>
+                                        <span>4</span>
+                                    </label>
+                                    <label>
+                                        <input name="group1" type="radio" value="6"/>
+                                        <span>5</span>
+                                    </label>
+                                </div>
+                                <div class"input-field">
+                                    <label for="comentario">Comentario<label>
+                                    <textarea id="comentario" class="materialize-textarea" data-length="150"></textarea> 
+                                </div>
+                                <div>
+                                    <a id="valoracion" class="waves-effect waves-light btn #1e88e5 blue darken-1">Guardar</a>
+                                </div>
+                                </center>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
+                                </div>
+
+
+                            </form>
+                            </div>
 
                     </div>
 
