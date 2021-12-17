@@ -30,7 +30,7 @@ document.getElementById("buscar").addEventListener("click", function() {
                             <div>
                                 <label>
                                     <input name"Favorito" type="checkbox"/>
-                                    <span>Marcar como favorito</span>
+                                    <span>Marcar como favorito!</span>
                                 </label>
                             </div>
                             <div>
