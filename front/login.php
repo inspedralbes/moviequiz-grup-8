@@ -1,6 +1,5 @@
 <?php
 
-    session_start();
     if (isset($_POST['login'])){
         $connection = new mysqli("labs.inspedralbes.cat", "a18polpuipui_pol", "Movie1234", "a18polpuipui_movie");
         $username = $connection->real_escape_string( $_POST['usernamePhp']);
@@ -9,9 +8,18 @@
 
         $data = $connection->query(query:"SELECT id FROM users WHERE username='$username' AND password='$password'");
         if ($data->num_rows>0){
+            session_start();
+            $arr = array ('exito'=>true,'nombre'=>"Alvaro Perez",'imagen'=>'https://randomuser.me/api/portraits/men/23.jpg'); 
+
             exit('OK');
-        } else
+        } else {
+        $arr = array ('exito'=>false);
             exit('NO');
+        }
+
+        $myJSON = json_encode($arr);
+
+echo $myJSON;
         
     }
 ?>
@@ -19,7 +27,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <form class="col s9" method="post" action="login.php">
     <div class="row">
-        <div id="areaLogin" >
+        <div id="areaLogin">
             <div class="input-field col s3">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="icon_prefix" type="text" class="validate" name="username">
@@ -34,14 +42,18 @@
                 <input type="button" id="login" name="login" class="waves-effect waves-light btn-small" value="LOGIN" />
             </div>
         </div>
-        <div id="areaLogout" class="oculta">
-            <div class="input-field col s3">
-                <input type="button" id="logout" name="logout" class="waves-effect waves-light btn-small" value="SALIR" />
-            </div>
-        </div>
     </div>
 </form>
-
+<div class="row">
+    <div id="areaLogout" class="oculta">
+        <div class="col s6">
+            <img src="https://randomuser.me/api/portraits/men/23.jpg"/>
+        </div>
+        <div class="col s6">
+            <input type="button" id="logout" name="logout" class="waves-effect waves-light btn-small" value="SALIR" />
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -65,17 +77,17 @@ $(document).ready(function() {
                     },
                     success: function(response) {
                         console.log(response);
-                        if(response=='OK'){
+                        if (response == 'OK') {
                             document.getElementById("areaLogin").classList.add("oculta");
                             document.getElementById("areaLogout").classList.remove("oculta");
 
-                        }
-                        else{
+                        } else {
                             alert("Nombre se usuario o contraseña incorrecta");
                         }
                     },
                     dataType: 'text'
                 }
+
 
             );
         }
