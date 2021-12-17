@@ -15,4 +15,6 @@
   .fav { grid-area: fav; }
 
 
-
+.oculta{
+  display:none;
+}
