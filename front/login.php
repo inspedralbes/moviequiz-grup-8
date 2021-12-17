@@ -9,18 +9,13 @@
         $data = $connection->query(query:"SELECT id FROM users WHERE username='$username' AND password='$password'");
         if ($data->num_rows>0){
             session_start();
-            $arr = array ('exito'=>true,'nombre'=>"Alvaro Perez",'imagen'=>'https://randomuser.me/api/portraits/men/23.jpg'); 
-
+ 
             exit('OK');
         } else {
-        $arr = array ('exito'=>false);
+       
             exit('NO');
         }
 
-        $myJSON = json_encode($arr);
-
-echo $myJSON;
-        
     }
 ?>
 
@@ -47,8 +42,8 @@ echo $myJSON;
 <div class="row">
     <div id="areaLogout" class="oculta">
         <div class="col s6">
-            <img src="https://randomuser.me/api/portraits/men/23.jpg"/>
-        </div>
+            <img width="75px" src="https://randomuser.me/api/portraits/men/25.jpg" />
+                    </div>
         <div class="col s6">
             <input type="button" id="logout" name="logout" class="waves-effect waves-light btn-small" value="SALIR" />
         </div>
@@ -82,7 +77,7 @@ $(document).ready(function() {
                             document.getElementById("areaLogout").classList.remove("oculta");
 
                         } else {
-                            alert("Nombre se usuario o contraseña incorrecta");
+                            alert("Nombre de usuario o contraseña incorrecta");
                         }
                     },
                     dataType: 'text'
