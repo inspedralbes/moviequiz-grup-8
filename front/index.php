@@ -20,15 +20,14 @@
 </head>
 
 <body class="#b39ddb deep-purple lighten-3">
-    <br>
-    <br>
-    <br>
+<div id="areaBuscar" class="oculta">
+    <?php
+        require_once('buscador.php');
+    ?>
+</div>
 
-
-    <form action="buscador.php" method="POST">
-        <button class="btn waves-effect waves-light" type="submit" name="search" value="Buscar">Buscar pelis
-            <i class="material-icons right">find_in_page</i>
-        </button>
+<div id="areaIndex">
+    <form method="POST">
         <div class="container">
             <div class="masvistas">
                 <h4>Peliculas Recomendadas</h4>
@@ -70,7 +69,7 @@
 
 
     </form>
-    
+</div>   
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');

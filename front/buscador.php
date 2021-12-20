@@ -16,9 +16,6 @@
 </head>
 
 <body class="#b39ddb deep-purple lighten-3">
-    <?php
-        require_once('header.php');
-    ?>
     <br><br><br>
     <input type="text" name="search" id="nombrePeli">
     <button id="buscar" class="btn waves-effect waves-light" name="action">Buscar

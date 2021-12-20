@@ -73,8 +73,10 @@ $(document).ready(function() {
                     success: function(response) {
                         console.log(response);
                         if (response == 'OK') {
+                            document.getElementById("areaIndex").classList.add("oculta");
                             document.getElementById("areaLogin").classList.add("oculta");
                             document.getElementById("areaLogout").classList.remove("oculta");
+                            document.getElementById("areaBuscar").classList.remove("oculta");
 
                         } else {
                             alert("Nombre de usuario o contraseña incorrecta");
