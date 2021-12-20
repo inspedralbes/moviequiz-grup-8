@@ -36,7 +36,7 @@
                 <div class="carousel center-align">
                         <a class="carousel-item" href="#one!"><img src="https://api.lorem.space/image/movie?w=159&h=220"></a>
                         <a class="carousel-item" href="#two!"><img src="https://api.lorem.space/image/movie?w=158&h=220"></a>
-                        <a class="carousel-item" href="#three!"><img src="https://api.lorem.space/image/movie?w=159&h=220"></a>
+                        <a class="carousel-item" href="#three!"><img src="https://api.lorem.space/image/movie?w=153&h=220"></a>
                         <a class="carousel-item" href="#four!"><img src="https://api.lorem.space/image/movie?w=156&h=220"></a>
                         <a class="carousel-item" href="#five!"><img src="https://api.lorem.space/image/movie?w=154&h=220"></a>
                 </div>
@@ -67,7 +67,9 @@
     document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('.carousel');
         M.Carousel.init(elements, {
-            duration: 150
+            duration: 150,
+            dist: -15,
+            
         });
         
     });
