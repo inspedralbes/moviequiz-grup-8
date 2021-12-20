@@ -17,6 +17,7 @@
     <?php
         require_once('header.php');
     ?>
+   
 </head>
 
 <body class="#b39ddb deep-purple lighten-3">

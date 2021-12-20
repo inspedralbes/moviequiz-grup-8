@@ -1,5 +1,12 @@
 <?php
 
+    session_start();
+
+    if (isset($_SESSION['logeado'])){
+        header('Location: hidden.php');
+        exit();
+    }
+
     if (isset($_POST['login'])){
         $connection = new mysqli("labs.inspedralbes.cat", "a18polpuipui_pol", "Movie1234", "a18polpuipui_movie");
         $username = $connection->real_escape_string( $_POST['usernamePhp']);
@@ -8,7 +15,8 @@
 
         $data = $connection->query(query:"SELECT id FROM users WHERE username='$username' AND password='$password'");
         if ($data->num_rows>0){
-            session_start();
+            $_SESSION['logeado']='1';
+            $_SESSION['username']=$username;
  
             exit('OK');
         } else {
@@ -34,7 +42,10 @@
                 <label for="icon_telephone">Password</label>
             </div>
             <div class="input-field col s3">
-                <input type="button" id="login" name="login" class="waves-effect waves-light btn-small" value="LOGIN" />
+                <button class="btn waves-effect waves-light" type="button" id="login" name="login">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <!-- <input type="button" id="login" name="login" class="waves-effect waves-light btn-small" value="LOGIN" /> -->
             </div>
             <div class="input-field col s3">
                 <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
@@ -42,14 +53,13 @@
         </div>
     </div>
 </form>
-<br>
 <div class="row">
     <div id="areaLogout" class="oculta">
-        <div class="col s5">
+        <div class="col s6">
             <img width="75px" src="https://randomuser.me/api/portraits/men/25.jpg" />
         </div>
-        <div class="col s5">
-            <input type="button" id="logout" name="logout" class="waves-effect waves-light btn-small" value="SALIR" />
+        <div class="col s6">
+            <a href="logout.php" id="logout" class="waves-effect waves-light btn">SALIR</a>
         </div>
     </div>
 </div>
