@@ -12,13 +12,18 @@
         $username = $connection->real_escape_string( $_POST['usernamePhp']);
         $password = $connection->real_escape_string( $_POST['passwordPhp']);
 
+        $sql = "SELECT id, username, password FROM users WHERE username='$username'";
+        $result = mysqli_query($connection, $sql);
+        $row = mysqli_fetch_assoc($result);
 
-        $data = $connection->query(query:"SELECT id FROM users WHERE username='$username' AND password='$password'");
+        $data = $connection->query(query:"SELECT id FROM users WHERE username='$username'");
         if ($data->num_rows>0){
+            if(password_verify($password, $row["password"])){
             $_SESSION['logeado']='1';
             $_SESSION['username']=$username;
  
             exit('OK');
+            }
         } else {
        
             exit('NO');
@@ -42,10 +47,7 @@
                 <label for="icon_telephone">Password</label>
             </div>
             <div class="input-field col s3">
-                <button class="btn waves-effect waves-light" type="button" id="login" name="login">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-                <!-- <input type="button" id="login" name="login" class="waves-effect waves-light btn-small" value="LOGIN" /> -->
+                <button class="btn waves-effect waves-light" type="button" id="login" name="login">LOGIN</button>
             </div>
             <div class="input-field col s3">
                 <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
