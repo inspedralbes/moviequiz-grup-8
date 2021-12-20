@@ -36,15 +36,19 @@
             <div class="input-field col s3">
                 <input type="button" id="login" name="login" class="waves-effect waves-light btn-small" value="LOGIN" />
             </div>
+            <div class="input-field col s3">
+                <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
+            </div>
         </div>
     </div>
 </form>
+<br>
 <div class="row">
     <div id="areaLogout" class="oculta">
-        <div class="col s6">
+        <div class="col s5">
             <img width="75px" src="https://randomuser.me/api/portraits/men/25.jpg" />
-                    </div>
-        <div class="col s6">
+        </div>
+        <div class="col s5">
             <input type="button" id="logout" name="logout" class="waves-effect waves-light btn-small" value="SALIR" />
         </div>
     </div>

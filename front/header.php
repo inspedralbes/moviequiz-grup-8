@@ -9,9 +9,7 @@
                         <?php
         require_once('login.php');
     ?>
-                        <div class="input-field col s3">
-                            <a class="waves-effect waves-light btn-small" href="registro.php">Registre</a>
-                        </div>
+                        
                     </div>
                 </form>
             </div>
