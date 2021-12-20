@@ -2,7 +2,7 @@ document.getElementById("buscar").addEventListener("click", function() {
     let busqueda = document.getElementById("nombrePeli").value;
     document.getElementById("nombrePeli").value = "";
     var url = `http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
-
+    
     fetch(url).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(function(response) {
@@ -25,7 +25,7 @@ document.getElementById("buscar").addEventListener("click", function() {
                         <div class="modal-content">
                         <center>
                         <form method="post">
-                        <h3 name="titulo" id="titulo">${d[index].Title}</h3>
+                        <h3 name="titulo" id="titulo">${d[index].Title} (${d[index].Year})</h3>
                         <h5>Valoracion</h5>
                             <div>
                                 <label>
