@@ -44,9 +44,10 @@
                 </div>
 
                 <div class="fav">
-                    <h1>Carrito de peliculas</h1>
-                   
-                   
+                    <h2>Carrito de peliculas</h2>
+                   <br><br><br>
+                   <h3>Puntuacions</h3>
+                   <p>Usuari1-20pts</p>
                 </div>
                 <a class="btn waves-effect waves-light modal-trigger" href="#jugar">JUGAR</a>
             </div>

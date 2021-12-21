@@ -30,13 +30,13 @@
                   
                 </ul>
               </div>
-          </div>
-          
-          <div class="footer-copyright">
-            <div class="container">
+
             © 2021 Copyright Text
             <a class="grey-text text-lighten-4 right" href="#!">Alvaro Lozano | Pol Puig</a>
-            </div>
+          
           </div>
+          
+          
+           
         </footer>
 </div>
