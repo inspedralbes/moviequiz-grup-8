@@ -20,24 +20,17 @@ include('config.php');
  
 if (isset($_POST['guardar'])) {
  
-    $titulo = $_POST['tituloPhp'];
-    $poster = $_POST['posterPhp'];
     $favorito = $_POST['favoritoPhp'];
     $valoracion = $_POST['valoracionPhp'];
     $comentario = $_POST['comentarioPhp'];
 
-    $query = $connection->prepare("SELECT * FROM pelicula WHERE titulo=:titulo");
-    $query->bindParam("titulo", $titulo, PDO::PARAM_STR);
-    $query->execute();
  
     if ($query->rowCount() > 0) {
         echo '<p class="error" style="color:red" >Esta pelicula ya esta registrado!</p>';
     }
  
     if ($query->rowCount() == 0) {
-        $query = $connection->prepare("INSERT INTO pelicula(titulo,poster,favorito,valoracion,comentario) VALUES (:titulo,:poster,:favorito,:valoracion,:comentario)");
-        $query->bindParam("titulo", $titulo, PDO::PARAM_STR);
-        $query->bindParam("poster", $poster, PDO::PARAM_STR);
+        $query = $connection->prepare("INSERT INTO pelicula(favorito,valoracion,comentario) VALUES (:favorito,:valoracion,:comentario)");
         $query->bindParam("favorito", $favorito, PDO::PARAM_STR);
         $query->bindParam("valoracion", $valoracion, PDO::PARAM_STR);
         $query->bindParam("comentario", $comentario, PDO::PARAM_STR);

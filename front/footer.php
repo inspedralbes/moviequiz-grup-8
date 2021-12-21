@@ -14,7 +14,7 @@
 
             </div>
             <div class="col l12 s12 right">
-                <h5 class="white-text">Nosotros somos MovieQuiz8</h5>
+                <h5 class="white-text">Nosotros somos MovieQuiz5</h5>
                 <ul>
                     <li><i class="material-icons prefix">looks_one</i><a class="grey-text text-lighten-3"
                             href="#!">Sobre Nosotros</a></li><br>
@@ -23,7 +23,7 @@
                     <li><i class="material-icons prefix">looks_3</i><a class="grey-text text-lighten-3"
                             href="#!">Trabaja con Nosotros</a></li><br>
                     <li><i class="material-icons prefix">looks_4</i><a class="grey-text text-lighten-3"
-                            href="#!">Prensa</a></li><br><hr>
+                            href="#!">Prensa</a></li><br>
                     © 2021 Copyright Text
                     <a class="grey-text text-lighten-4 right" href="#!">Alvaro Lozano | Pol Puig</a>
 
