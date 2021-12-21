@@ -4,23 +4,19 @@ include('../front/config.php');
  
 
  
-    $favorito = $_POST['favoritoPhp'];
-    $valoracion = $_POST['valoracionPhp'];
-    $comentario = $_POST['comentarioPhp'];
+    $favorito = $_POST['favorito'];
+    $valoracion = $_POST['valoracion'];
+    $comentario = $_POST['comentario'];
     
-    
-        $query = $connection->prepare("INSERT INTO pelicula(favorito,valoracion,comentario) VALUES (:favorito,:valoracion,:comentario)");
-        $query->bindParam("favorito", $favorito, PDO::PARAM_STR);
-        $query->bindParam("valoracion", $valoracion, PDO::PARAM_STR);
+    $query = $connection->prepare("INSERT INTO pelicula (favorito,valoracion,comentario) VALUES (:favorito,:valoracion,:comentario)");
+        $query->bindParam("favorito", $favorito, PDO::PARAM_BOOL);
+        $query->bindParam("valoracion", $valoracion, PDO::PARAM_INT);
         $query->bindParam("comentario", $comentario, PDO::PARAM_STR);
         $result = $query->execute();
- 
+        
         if ($result) {
-            echo '<p class="flow-text" style="color:green" >Se ha guardado</p>';
+            echo '<center><p class="flow-text centrao">Datos guardados correctamente!!</p></center>';
         } else {
-            echo '<p class="error" style="color:red" >Algo esta Mal!</p>';
+            echo '<center><p class="error">No se han podido guardar tus datos!</p></center>';
         }
-    
-
- 
 ?>

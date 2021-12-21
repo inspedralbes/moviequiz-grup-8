@@ -36,23 +36,23 @@ document.getElementById("buscar").addEventListener("click", function () {
                             <div>
                                 <br>
                                 <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="1"/>
+                                    <input name="valoracion" id="valoracionA${index}" type="radio" value="1"/>
                                     <span>1</span>
                                 </label>
                                 <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="2"/>
+                                    <input name="valoracion" id="valoracionB${index}" type="radio" value="2"/>
                                     <span>2</span>
                                 </label>
                                 <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="3"/>
+                                    <input name="valoracion" id="valoracionC${index}" type="radio" value="3"/>
                                     <span>3</span>
                                 </label>
                                 <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="4"/>
+                                    <input name="valoracion" id="valoracionD${index}" type="radio" value="4"/>
                                     <span>4</span>
                                 </label>
                                 <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="5"/>
+                                    <input name="valoracion" id="valoracionE${index}" type="radio" value="5"/>
                                     <span>5</span>
                                 </label>
                             </div>
@@ -84,51 +84,37 @@ document.getElementById("buscar").addEventListener("click", function () {
             var instances = M.Modal.init(elems, {});
 
 
-            document.getElementById("resultado").addEventListener("click",function(e){
+            document.getElementById("resultado").addEventListener("click", function (e) {
 
                 console.log(e.target);
 
-                if (e.target.classList.contains("btn-guardar")){
+                if (e.target.classList.contains("btn-guardar")) {
 
 
-                console.log(e.target.parentNode.parentNode);
-                console.log(e.target.parentNode.parentNode.querySelector("[name='Favorito']").value);
-                console.log(e.target.parentNode.parentNode.querySelector("[name='valoracion']").value);
-                console.log(e.target.parentNode.parentNode.querySelector("[name='comentario']").value);
-                console.log(e.target.parentNode.parentNode.querySelector("[name='titulo']") );
+                    console.log(e.target.parentNode.parentNode);
+                    console.log(e.target.parentNode.parentNode.querySelector("[name='Favorito']").value);
+                    console.log(e.target.parentNode.parentNode.querySelector("[name='valoracion']").value);
+                    console.log(e.target.parentNode.parentNode.querySelector("[name='comentario']").value);
+                    console.log(e.target.parentNode.parentNode.querySelector("[name='titulo']"));
 
-    //        $(".btn-guardar").on('click', function () {
-                
-                let comentario = e.target.parentNode.parentNode.querySelector("[name='comentario']").value;
-                let favorito = e.target.parentNode.parentNode.querySelector("[name='Favorito']").value;
-                let valoracion = e.target.parentNode.parentNode.querySelector("[name='valoracion']").value;
+                    //        $(".btn-guardar").on('click', function () {
 
-                
+                    let comentario = e.target.parentNode.parentNode.querySelector("[name='comentario']").value;
+                    let favorito = e.target.parentNode.parentNode.querySelector("[name='Favorito']".checked == true) ? 1 : 0;
+                    let valoracion = e.target.parentNode.parentNode.querySelector("[name='valoracion']:checked").value;
 
-        
-        
-                if (comentario == "")
-                    alert('error');
-                else {
-        
-                    $.ajax({
-                        url: '../back/registrarValoracion.php',
+                    
+
+                    const infoPeli = new FormData();
+                    infoPeli.append('favorito', favorito);
+                    infoPeli.append('valoracion', valoracion);
+                    infoPeli.append('comentario', comentario);
+                    fetch(`../back/registrarValoracion.php`, {
                         method: 'POST',
-                        data: {
-                            pelicula: 1,
-                            favoritoPhp: favorito,
-                            valoracionPhp: valoracion,
-                            comentarioPhp: comentario,
-        
-                        },
-                        dataType: 'text'
-                    }
-        
-        
-                    );
+                        body: infoPeli
+                    });
                 }
-            };
+            })
         })
-        });
 })
 
