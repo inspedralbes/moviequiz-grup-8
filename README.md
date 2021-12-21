@@ -10,7 +10,7 @@ Un cop comenceu heu de canviar aquesta explicació amb la corresponent al vostre
 
 # Aquest fitxer ha de contenir com a mínim:
  * Alvaro Lozano , Pol Puig
- * Movie Quiz
- * Petita descripció
- * URL de producció (quan la tingueu)
- * Estat: (explicació de en quin punt està)
+ * Movie Quiz 8
+ * Petita descripcióÑ: Cercador de peliculas funcional amb Joc implementat per adivinar dades de la peli. Pots registrarte y pots fer login/logout
+ * http://moviequiz8.alumnes.inspedralbes.cat/front/
+ * Estat: Final
