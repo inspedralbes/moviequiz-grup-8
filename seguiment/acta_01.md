@@ -9,9 +9,11 @@
 - Login casi acabat
 
 # Sprint3
--  Joc de adivinar any de pelicula
 - Modals Varios de pelis
 - Login Ajax funcionant
 - Detalls
+- Joc de adivinar any de pelicula
 
-
+# Sprint3
+- Joc de adivinar any de pelicula
+- Guardar Pelis

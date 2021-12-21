@@ -55,34 +55,47 @@
             <div id="jugar" class="modal">
                 <div class="modal-content">
                     <div id="juego">
-                        <h1>Juguemos</h1>
-                        <form method="post">
-                        <h3 name="titulo" id="titulo"></h3>
-                        <h5>De que Años es esta Peli?</h5>
-                        <img src="https://api.lorem.space/image/movie?w=154&h=220">
-                            <div>
-                               
-                            </div>
-                            <div>
-                                <br>
-                                <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="1"/>
-                                    <span>2005</span>
-                                </label>
-                                <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="2"/>
-                                    <span>2006</span>
-                                </label>
-                                <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="3"/>
-                                    <span>2007</span>
-                                </label>
-                                <label>
-                                    <input name="valoracion" id="valoracion" type="radio" value="4"/>
-                                    <span>2008</span>
-                                </label>
-                             
-                            </div>
+                    <script>
+    fetch('./output_generar_partida.json')
+      .then(response => response.json() )
+      .then(data => {
+        console.log(data);
+        const pelis=data.peliculas;
+        
+        let htmlStr="";
+
+        for (let index = 0; index < pelis.length; index++) {
+          const element = pelis[index];        
+
+          htmlStr += `<div class='card'>
+                    <h2>${element.Nombre}</h2>
+                    <img src='${element.Poster}'>
+                    <div>
+                    <label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <span for="opcion1_1">${element.choice1}</span>
+                      </label>
+                      <label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <span for="opcion1_1">${element.choice2}</span>
+                      </label>
+                      <label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <span for="opcion1_1">${element.choice3}</span>
+                      </label>
+                      <label>
+                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <span for="opcion1_1">${element.choice4}</span>
+                      </label>
+                    </div>
+                    </div>`;
+        }
+        htmlStr += `<button id='enviar'>JUGAR</button>`;
+        document.getElementById("juego").innerHTML=htmlStr;
+
+        });
+    
+</script>
                            
                             <div>
                                 <a id="guardar" class="waves-effect waves-light btn #1e88e5 blue darken-1" name="guardar">Guardar Partida</a>
