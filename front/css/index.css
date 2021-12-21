@@ -31,3 +31,7 @@ footer{
   /* width: 50px; */
   height: 330px;
 }
+
+.centre{
+  text-align: center;
+}

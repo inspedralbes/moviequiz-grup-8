@@ -31,7 +31,7 @@
         <form method="POST">
             <div class="container">
                 <div class="masvistas">
-                    <h4>Peliculas Recomendadas</h4>
+                    <h2>Peliculas Recomendadas</h2>
 
                     <div class="carousel center-align">
                         <a class="carousel-item" href="#one!"><img
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="fav">
-                    <h2>Carrito de peliculas</h2>
+                    <h3>Carrito de peliculas</h3>
                     <br><br><br>
                     <h3>Puntuacions</h3>
                     <p>Usuari1-20pts</p>
@@ -59,6 +59,7 @@
             </div>
             </br>
             <div id="jugar" class="modal">
+            <div class="#b39ddb deep-purple lighten-3">
                 <div class="modal-content">
                     <div id="juego">
                         <script>
@@ -73,30 +74,32 @@
                                 for (let index = 0; index < pelis.length; index++) {
                                     const element = pelis[index];
 
-                                    htmlStr += `<div class='card'>
+                                    htmlStr += `<div class="centre">
+                                    <div class='card'>
                     <h2>${element.Nombre}</h2>
                     <img src='${element.Poster}'>
                     <div>
                     <label>
-                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <input type="radio" name="opcion1" id="opcion1_1">
                       <span for="opcion1_1">${element.choice1}</span>
                       </label>
                       <label>
-                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <input type="radio" name="opcion1" id="opcion1_1">
                       <span for="opcion1_1">${element.choice2}</span>
                       </label>
                       <label>
-                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <input type="radio" name="opcion1" id="opcion1_1">
                       <span for="opcion1_1">${element.choice3}</span>
                       </label>
                       <label>
-                      <input type="checkbox" name="opcion1" id="opcion1_1">
+                      <input type="radio" name="opcion1" id="opcion1_1">
                       <span for="opcion1_1">${element.choice4}</span>
                       </label>
                     </div>
+                    </div>
                     </div>`;
                                 }
-                                htmlStr += `<button id='enviar'>JUGAR</button>`;
+                                htmlStr += `<button id='enviar'>COMPROVAR</button>`;
                                 document.getElementById("juego").innerHTML = htmlStr;
 
                             });
@@ -117,7 +120,7 @@
         <a href="#" class="waves-effect waves-light btn-flat modal-close">Aceptar</a>
     </div>
     </div>
-
+    </div>
 
 
     </form>
