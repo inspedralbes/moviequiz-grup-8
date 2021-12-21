@@ -55,14 +55,29 @@
         </div>
     </div>
 </form>
+
 <div class="row">
     <div id="areaLogout" class="oculta">
         <div class="col s6">
-            <img width="75px" src="https://randomuser.me/api/portraits/men/25.jpg" />
+            <a class=" modal-trigger" id="misDatosbtn" href="#modal"><img width="75px" src="https://randomuser.me/api/portraits/men/25.jpg" /></a>
+
+            <div id="modal" class="modal">
+                <div class="#b39ddb deep-purple lighten-3">
+                    <div class="modal-content">
+                        <h4>Perfil</h4>
+                       
+                         <div id="DatosPersonales"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <a href="logout.php" id="logout" class="waves-effect waves-light btn">SALIR</a>
+            </div>
         </div>
-        <div class="col s6">
-            <a href="logout.php" id="logout" class="waves-effect waves-light btn">SALIR</a>
-        </div>
+
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -105,5 +120,35 @@ $(document).ready(function() {
             );
         }
     });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+});
+</script>
+<script>
+document.getElementById("misDatosbtn").addEventListener("click",function(){
+
+let username = document.getElementById("usernamePhp");
+const datosEnvio = new FormData();
+    datosEnvio.append('usernamePhp', username);
+fetch(`config.php`, {
+
+    method: 'POST',
+
+    body: datosEnvio
+
+}).then(response => response.json()).then(data => {
+    
+let htmlStr="";
+htmlStr+=`
+    <img src="https://randomuser.me/api/portraits/men/23.jpg"  width="100">
+       <p><b>Usuario:</b> ${data.vo[0].username}</p>
+    <p><b>Email:</b> ${data.username[0].email}</p>
+`;
+document.getElementById("DatosPersonales").innerHTML = htmlStr;
+});
 });
 </script>
