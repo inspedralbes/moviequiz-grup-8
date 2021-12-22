@@ -13,7 +13,7 @@ document.getElementById("buscar").addEventListener("click", function () {
             for (let index = 0; index < d.length; index++) {
                 console.log(d[index].Title)
                 htmlStr += `
-                    <div class="col s2">
+                    <div class="col s3">
                         <div class="card large">
                         <a class="btn-floating halfway-fab waves-effect waves-light modal-trigger red add" href="#modal${index}">+info</a>
                                 <img src="${d[index].Poster}" name="poster" id="poster" width="295px" height="450px">
