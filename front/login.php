@@ -2,10 +2,6 @@
 
     session_start();
 
-    if (isset($_SESSION['logeado'])){
-        header('Location: hidden.php');
-        exit();
-    }
 
     if (isset($_POST['login'])){
         $connection = new mysqli("labs.inspedralbes.cat", "a18polpuipui_pol", "Movie1234", "a18polpuipui_movie");
@@ -19,8 +15,7 @@
         $data = $connection->query("SELECT id FROM users WHERE username='$username'");
         if ($data->num_rows>0){
             if(password_verify($password, $row["password"])){
-            $_SESSION['logeado']='1';
-            $_SESSION['username']=$username;
+            
  
             exit('OK');
             }
