@@ -16,7 +16,7 @@
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
 
-        $data = $connection->query(query:"SELECT id FROM users WHERE username='$username'");
+        $data = $connection->query("SELECT id FROM users WHERE username='$username'");
         if ($data->num_rows>0){
             if(password_verify($password, $row["password"])){
             $_SESSION['logeado']='1';
