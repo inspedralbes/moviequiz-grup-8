@@ -58,6 +58,8 @@
                 
             </div>
             </br>
+
+            <!-- Juego en JS Sin acabar -->
             <div id="jugar" class="modal">
             <div class="#b39ddb deep-purple lighten-3">
                 <div class="modal-content">
@@ -127,6 +129,7 @@
 
     </div>
     <script>
+        // Activar carrusel
     document.addEventListener('DOMContentLoaded', () => {
         const elements = document.querySelectorAll('.carousel');
         M.Carousel.init(elements, {
@@ -138,6 +141,7 @@
     });
     </script>
     <script>
+        // activar modal
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);

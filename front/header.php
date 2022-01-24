@@ -1,3 +1,4 @@
+<!-- NAV VAR -->
 <div class="navbar-fixed">
 
     <nav class="#9575cd deep-purple lighten-2">

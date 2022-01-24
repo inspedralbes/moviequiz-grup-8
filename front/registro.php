@@ -14,25 +14,25 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <?php
- 
+//  Iniciamos BD
 include('config.php');
 session_start();
- 
+//  Registro
 if (isset($_POST['register'])) {
  
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
- 
+    $password_hash = password_hash($password, PASSWORD_BCRYPT); //Encriptamos Password
+    //Accedemos a la BD
     $query = $connection->prepare("SELECT * FROM users WHERE EMAIL=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
  
     if ($query->rowCount() > 0) {
-        echo '<p class="error" style="color:red" >Este email ya esta registrado!</p>';
+        echo '<p class="error" style="color:red" >Este email ya esta registrado!</p>';//Error mail ya registrado
     }
- 
+    //Definimos variable para hacer un insert del registro en la BD
     if ($query->rowCount() == 0) {
         $query = $connection->prepare("INSERT INTO users(USERNAME,PASSWORD,EMAIL) VALUES (:username,:password_hash,:email)");
         $query->bindParam("username", $username, PDO::PARAM_STR);
@@ -41,15 +41,15 @@ if (isset($_POST['register'])) {
         $result = $query->execute();
  
         if ($result) {
-            echo '<p class="flow-text" style="color:green" >Te has registrado correctamente!!</p>';
+            echo '<p class="flow-text" style="color:green" >Te has registrado correctamente!!</p>'; //Logeado
         } else {
-            echo '<p class="error" style="color:red" >Algo esta Mal!</p>';
+            echo '<p class="error" style="color:red" >Algo esta Mal!</p>'; //No logeado
         }
     }
 }
  
 ?>
-
+<!-- //Nav login -->
 <body class="#d1c4e9 deep-purple lighten-4">
     <div class="row">
         <form class="col s12" method="post" action="" name="signup-form">

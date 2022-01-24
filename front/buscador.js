@@ -1,7 +1,7 @@
-document.getElementById("buscar").addEventListener("click", function () {
+document.getElementById("buscar").addEventListener("click", function () { //div buscar
     let busqueda = document.getElementById("nombrePeli").value;
     document.getElementById("nombrePeli").value = "";
-    var url = `http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`;
+    var url = `http://www.omdbapi.com/?apikey=58b1abc&s=${busqueda}`; //Busqueda api
 
     fetch(url).then(res => res.json())
         .catch(error => console.error('Error:', error))
@@ -9,7 +9,7 @@ document.getElementById("buscar").addEventListener("click", function () {
             console.log('Success:', response.Search);
             let d = response.Search;
             let htmlStr = "";
-
+            // Modal
             for (let index = 0; index < d.length; index++) {
                 console.log(d[index].Title)
                 htmlStr += `
@@ -78,7 +78,7 @@ document.getElementById("buscar").addEventListener("click", function () {
 
                     `;
             }
-
+            // Modal
             document.getElementById("resultado").innerHTML = htmlStr;
             var elems = document.querySelectorAll('.modal');
             var instances = M.Modal.init(elems, {});
@@ -119,7 +119,7 @@ document.getElementById("buscar").addEventListener("click", function () {
 })
 
 
-
+// Accedemos a los datos x fetch (ajax)
 document.getElementById("misDatosbtn").addEventListener("click",function(){
 
 let username = document.getElementById("username");

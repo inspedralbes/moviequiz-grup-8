@@ -4,10 +4,12 @@
 
 
     if (isset($_POST['login'])){
+        // Accedemos a la BD
         $connection = new mysqli("labs.inspedralbes.cat", "a18polpuipui_pol", "Movie1234", "a18polpuipui_movie");
+        // Logeamos
         $username = $connection->real_escape_string( $_POST['usernamePhp']);
         $password = $connection->real_escape_string( $_POST['passwordPhp']);
-
+        // Seleccionamos el usuario y password para poder acceder 
         $sql = "SELECT id, username, password FROM users WHERE username='$username'";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
@@ -76,6 +78,7 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Accedemos Login con ajax -->
 <script type="text/javascript">
 $(document).ready(function() {
     console.log('pagina lista');
@@ -98,12 +101,14 @@ $(document).ready(function() {
                     success: function(response) {
                         console.log(response);
                         if (response == 'OK') {
+                            // Ocultamos clases cuando hace login para que salga el logout solo
                             document.getElementById("areaIndex").classList.add("oculta");
                             document.getElementById("areaLogin").classList.add("oculta");
                             document.getElementById("areaLogout").classList.remove("oculta");
                             document.getElementById("areaBuscar").classList.remove("oculta");
 
                         } else {
+                            // ERROR
                             alert("Nombre de usuario o contraseña incorrecta");
                         }
                     },
