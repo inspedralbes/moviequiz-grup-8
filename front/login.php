@@ -10,7 +10,7 @@
         $username = $connection->real_escape_string( $_POST['usernamePhp']);
         $password = $connection->real_escape_string( $_POST['passwordPhp']);
         // Seleccionamos el usuario y password para poder acceder 
-        $sql = "SELECT id, username, password FROM users WHERE username='$username'";
+        $sql = "SELECT id, username, pssword FROM users WHERE username='$username'";
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
 
